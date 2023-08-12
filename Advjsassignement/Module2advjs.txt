@@ -1,0 +1,17 @@
+(1):What is JavaScript Output method?
+ans:-JavaScript can "display" data in different ways: Writing into an HTML element, using innerHTML . Writing into the HTML output using document.write() . Writing into an alert box, using window.alert() . Writing into the browser console, using console.log() .
+
+
+(2):How to used JavaScript Output method? 
+ans:-Writing into an HTML element, using innerHTML.
+Writing into the HTML output using document.write() 
+Writing into an alert box, using window.alert() 
+Writing into the browser console, using console.log() 
+
+(3):How to used JavaScript Events to do all examples?
+ans:- Onload: When your page loads, it performs accordingly.
+Onclick: When a user clicks on a button or inputs it occurs.
+Onmouseover: When a user mouses over on the button.
+Onfocus: Certain scenarios when a user keeps the cursor in a form field.
+Onblur: If a particular form field leaves within it.
+

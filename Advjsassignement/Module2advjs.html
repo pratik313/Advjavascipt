@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+    }
+    
+    table {
+        width: 80%;
+        margin: 20px auto;
+        border-collapse: collapse;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    th, td {
+        padding: 10px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+    
+    th {
+        background-color: #f2f2f2;
+    }
+    
+    input.quantity {
+        width: 50px;
+        padding: 5px;
+    }
+</style>
+<body>
+    <table>
+        <thead>
+          <tr>
+            <th>Product name info</th>
+            <th>Quantity</th>
+            <th>Price (per unit)</th>
+            <th>Price (Subtotal)</th>
+            <th> Remove</th>
+          </tr>
+          
+        </thead>
+        <tbody>
+          <tr>
+            <td>Item 1</td>
+            <td><input type="number" class="quantity" data-price="10"></td>
+            <td>$10.00</td>
+            <td class="subtotal">$0.00</td>
+           <td> <button class="remove-button" style="background-color: red;">Remove</button></td>
+          </tr> 
+          
+          <tr>
+            <td>Item 2</td>
+            <td><input type="number" class="quantity" data-price="20"></td>
+            <td>$20.00</td>
+            <td class="subtotal">$0.00</td>
+            <td> <button class="remove-button" style="background-color: red;">Remove</button></td>
+          </tr>
+          <!-- Add more items as needed -->
+        </tbody>
+      </table>
+      
+</body>
+<script>
+    const quantityInputs = document.querySelectorAll('.quantity');
+
+quantityInputs.forEach(input => {
+  input.addEventListener('input', () => {
+    const quantity = parseInt(input.value);
+    const price = parseFloat(input.getAttribute('data-price'));
+    const subtotal = (quantity * price).toFixed(2);
+    
+    const subtotalCell = input.closest('tr').querySelector('.subtotal');
+    subtotalCell.textContent = `$${subtotal}`;
+  });
+});
+const removeButtons = document.querySelectorAll('.remove-button');
+
+removeButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const row = button.closest('tr');
+        row.remove();
+    });
+});
+</script>
+</html>
